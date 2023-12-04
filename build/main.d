@@ -1,1 +1,1 @@
-build/main.o: main.cpp date.h author.h book.h
+build/main.o: main.cpp date.h author.h person.h book.h reader.h
