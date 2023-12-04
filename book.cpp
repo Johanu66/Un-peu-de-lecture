@@ -1,6 +1,6 @@
 #include "book.h"
 
-Book::Book(std::string title, Author author, std::string langage, std::string type, Date post_date, std::string isbn)
+Book::Book(std::string title, Author& author, std::string langage, std::string type, Date& post_date, std::string isbn)
     : _title(title), _author(author), _langage(langage), _type(type), _post_date(post_date), _isbn(isbn) {
 }
 
@@ -32,7 +32,7 @@ void Book::updateTitle(std::string title) {
     _title = title;
 }
 
-void Book::updateAuthor(Author author) {
+void Book::updateAuthor(Author& author) {
     _author = author;
 }
 
@@ -44,7 +44,7 @@ void Book::updateType(std::string type) {
     _type = type;
 }
 
-void Book::updatePostDate(Date post_date) {
+void Book::updatePostDate(Date& post_date) {
     _post_date = post_date;
 }
 
@@ -60,4 +60,12 @@ std::ostream& operator<<(std::ostream& os, const Book& b){
   os << "Date de publication : " << b.postDate() << std::endl;
   os << "ISBN : " << b.isbn() << std::endl;
   return os;
+}
+
+void Book::addBorrower(int reader_id){
+  _previous_borrowers_id.push_back(reader_id);
+}
+
+std::vector<int> Book::previousBorrowerID() const{
+  return _previous_borrowers_id;
 }
