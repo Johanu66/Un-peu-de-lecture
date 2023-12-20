@@ -2,11 +2,11 @@
 #define READER_H
 
 #include <iostream>
+#include "book.h"
 #include <string>
 #include <vector>
 #include <algorithm>
 #include "person.h"
-#include "book.h"
 
 class Reader: public Person{
   private:
@@ -15,7 +15,7 @@ class Reader: public Person{
     Reader(std::string last_name, std::string first_name);
     void addBorrowedBook(Book& book);
     void removeBorrowedBook(Book& book);
-    std::vector<std::string> borrowedBooksID();
+    std::vector<std::string> borrowedBooksISBN();
 };
 
 std::ostream& operator<<(std::ostream& os, const Reader& r);

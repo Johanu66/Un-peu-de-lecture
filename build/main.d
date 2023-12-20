@@ -1,1 +1,2 @@
-build/main.o: main.cpp date.h author.h person.h book.h reader.h
+build/main.o: main.cpp date.h author.h person.h book.h reader.h library.h \
+ loan.h

@@ -12,6 +12,11 @@ std::string Loan::bookISBN() const {
     return _book_isbn;
 }
 
-int Loan::renderID() const {
+int Loan::readerID() const {
     return _reader_id;
+}
+
+std::ostream& operator<<(std::ostream& os, const Loan& loan){
+    os << "L'auteur " << loan.readerID() << " a emprunté le livre " << loan.bookISBN() << " le " << loan.loanDate() << std::endl;
+    return os;
 }

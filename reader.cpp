@@ -20,6 +20,6 @@ std::ostream& operator<<(std::ostream& os, const Reader& r){
   return os;
 }
 
-std::vector<std::string> Reader::borrowedBooksID(){
+std::vector<std::string> Reader::borrowedBooksISBN(){
   return _borrowed_books_isbn;
 }

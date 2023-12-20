@@ -1,1 +1,1 @@
-build/reader.o: reader.cpp reader.h person.h date.h book.h author.h
+build/reader.o: reader.cpp reader.h book.h author.h date.h person.h

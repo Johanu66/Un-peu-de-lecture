@@ -14,7 +14,9 @@ class Loan{
     Loan(Date loan_date, std::string book_isbn, int reader_id);
     Date loanDate() const;
     std::string bookISBN() const;
-    int renderID() const;
+    int readerID() const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Loan& loan);
 
 #endif

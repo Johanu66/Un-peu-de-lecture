@@ -1,7 +1,7 @@
 #include "book.h"
 
 Book::Book(std::string title, Author& author, std::string langage, std::string type, Date& post_date, std::string isbn)
-    : _title(title), _author(author), _langage(langage), _type(type), _post_date(post_date), _isbn(isbn) {
+    : _title(title), _author(author), _langage(langage), _type(type), _post_date(post_date), _isbn(isbn), _borrowed(false) {
 }
 
 std::string Book::title() const {
@@ -50,6 +50,14 @@ void Book::updatePostDate(Date& post_date) {
 
 void Book::updateISBN(std::string isbn) {
     _isbn = isbn;
+}
+
+
+bool Book::borrowed() const{
+    return _borrowed;
+}
+void Book::updateBorrowed(bool borrowed){
+    _borrowed = borrowed;
 }
 
 std::ostream& operator<<(std::ostream& os, const Book& b){
